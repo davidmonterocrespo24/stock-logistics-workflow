@@ -23,4 +23,4 @@ class StockPicking(models.Model):
 class Warehouse(models.Model):
     _inherit = "stock.warehouse"
 
-    company_id = fields.Many2one(readonly=False,)
+    company_id = fields.Many2one(readonly=False,required=False,)
