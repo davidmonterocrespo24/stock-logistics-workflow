@@ -18,3 +18,9 @@ class StockPicking(models.Model):
         ctx = self.env.context.copy()
         ctx.pop("default_picking_id", False)
         return self.with_context(**ctx).sale_id.get_formview_action()
+
+
+class Warehouse(models.Model):
+    _inherit = "stock.warehouse"
+
+    company_id = fields.Many2one(readonly=False,)
